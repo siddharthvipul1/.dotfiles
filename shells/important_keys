@@ -1,0 +1,2 @@
+gpg --armor --export {{ email/keys }}
+gpg --fingerprint siddharthvipul1@gmail.com

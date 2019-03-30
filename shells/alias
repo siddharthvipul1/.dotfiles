@@ -1,0 +1,141 @@
+# AUTOCOLOR {{{
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+##}}
+# LS {{{
+alias ls='ls -hF --sort=extension --color=auto'
+alias l='ls -1hF'
+alias sl='ls'
+alias lal='ls -alh'
+alias la='ls -A'
+alias lr='ls -R'
+alias ll='exa -bghHliS'
+alias psg='ps -A | grep'
+alias grep='grep --color -n'
+#alias install='sudo make install'
+#alias install='sudo dnf install'
+#alias pinstall='sudo dnf install -y'
+# }}}
+
+# MODIFIED COMMANDS {{{
+alias ..='cd ..'
+alias ....='cd ../..'
+alias ......='cd ../../..'
+alias df='df -hT'
+alias diff='colordiff'              # requires colordiff package
+alias du='du -c -h'
+alias free='free -m'                # show sizes in MB
+alias grep='grep --color=auto'
+alias pgrep='ps -aux | grep'
+alias grep='grep --color=tty -d skip'
+alias mkdir='mkdir -p -v'
+alias more='less'
+alias nano='nano -w'
+alias ping='ping -c 5'
+alias c='clear && clear'
+alias vrp="vroom vroom"
+alias exho='echo'
+#}}}
+
+# PRIVILEGED ACCESS {{{
+if ! $_isroot; then
+  alias sudo='sudo '
+  alias scat='sudo cat'
+  alias svim='sudoedit'
+  alias root='sudo su'
+  alias reboot='sudo reboot'
+  alias halt='sudo halt'
+  alias powertop='sudo powertop'
+fi
+#}}}
+
+# Jupyter notebook
+#alias jpn='jupyter notebook &> /dev/null &'
+#alias cjpn='kill $(pgrep jupyter)'
+
+##Conda & venv
+#alias ae='deactivate &> /dev/null; source ./venv/bin/activate'
+#alias de='deactivate'
+#alias ccn='conda create --name'
+#alias cae='source deactivate &> /dev/null; source activate'
+#alias cde='source deactivate'
+#
+# "depricated" alias staffcon="sudo bash /home/SiddharthVipul/changemac.sh"
+
+# SSH Alias
+alias aadhar-copy-id="ssh-copy-id"
+
+##Depricated irc weechat on droplet command
+alias irc='ssh root@139.59.87.240'
+alias ircx="ssh root@139.59.87.240 -t 'screen -r 1079.pts-0.ircOnFedora'"
+
+#shortcut to edit files
+alias cfg_vim='nvim ~/.vimrc'
+alias cfg_nvim='nvim ~/.config/nvim/init.vim'
+alias cfg_ali='nvim ~/.shells/alias'
+alias cfg_bash="nvim ~/.bashrc"
+alias cfg_zsh="nvim ~/.zshrc"
+alias cfg_i3="nvim ~/.config/i3/config"
+alias cfg_ranger="nvim ~/.config/ranger/rc.conf"
+alias cfg_powerline_tmux="nvim ~/.config/tmux-powerline/themes/default.sh"
+
+# Useful but stupid
+#alias rm='rm -i'
+#alias cp='cp -i'
+#alias mv='mv -i'
+#alias ll='ls -l'
+
+
+# Git Commands
+# Add and Commit are used as functions
+alias gs='git status'
+alias gdiff='git diff'
+alias gr='git reflog'
+alias gls='git ls-files'
+
+# Shortcut to test quick changes to bashrc
+alias reload='source ~/.zshrc'
+alias reload-tmux='tmux source-file ~/.tmux.conf'
+
+# notes
+alias note='vim ~/.notes'
+
+# Directories shortcuts
+#
+alias pr='cd ~/projects/'
+alias mc='cd ~/Music/'
+alias vi='cd ~/Videos/'
+alias duf='cd ~/projects/duffy/'
+alias vpn='nmcli con up Brno\ \(BRQ\) --ask'
+alias vpn_down='nmcli con down Brno\ \(BRQ\)'
+
+
+
+# Screenlayout server
+alias lg='bash ~/.screenlayout/lg27-4k-alone.sh'
+
+# CleanUp
+alias cleanup='bash ~/cleanup.sh'
+
+# application switch aliae
+alias vim='nvim'
+
+# CentOS server aliases
+alias ci_admin='ssh siddharthvipul1@admin.ci.centos.org'
+alias cico_admin='ssh cico-admins@slave06.ci.centos.org'
+alias n1_hufty='ssh siddharthvipul1@n1.hufty.ci.centos.org'
+alias duffy_n1='ssh siddharthvipul1@n1.hufty.ci.centos.org -t "sudo -i -u duffy"'
+
+
+# Audio, bluetooth devices and connectivity
+alias audio='pavucontrol'
+alias xm3='bluetoothctl connect CC:98:8B:1B:47:A4'
+alias mi_speaker='bluetoothctl connect 00:9E:C8:60:6A:6B'
+alias clean_tmux='tmux list-sessions | awk "BEGIN{FS=:}{print $1}" | xargs -n 1 tmux kill-session -t'
+alias disconnect_bluetooth='bluetoothctl disconnect'
+alias devconfcz_wifi="curl https://147.229.254.98/login.php -H 'Host: wifigw.cis.vutbr.cz' -H 'Content-Type: application/x-www-form-urlencoded' --data 'user=devconfcz&auth=any&password=Brno2019' --compressed -k -o /dev/null"
+alias dock='boltctl authorize 004c6830-55d7-0801-ffff-ffffffffffff'
