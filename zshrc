@@ -2,6 +2,7 @@ export ZSH=/home/siddharthvipul/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
 export UPDATE_ZSH_DAYS=13
+#test 2
 
 plugins=(
   git
