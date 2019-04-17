@@ -1,4 +1,5 @@
 export ZSH=/home/siddharthvipul/.oh-my-zsh
+# test
 
 ZSH_THEME="robbyrussell"
 export UPDATE_ZSH_DAYS=13
